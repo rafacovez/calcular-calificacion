@@ -13,10 +13,18 @@ def obtenerValores():
   global sp
   global ef
   global tp
-  pp = int(input("Digite la calificación de su primer parcial" + ": "))
-  sp = int(input("Digite la calificación de su segundo parcial" + ": "))
-  ef = int(input("Digite la calificación de su examen final" + ": "))
-  tp = int(input("Digite la calificación de su total práctica" + ": "))
+  pp = int(input("Digite la calificación de su primer parcial: "))
+  while pp < 0 or pp > 100:
+    pp = int(input("La calificación debe ser un número entre 0 y 100. Por favor, digite la calificación del primer parcial nuevamente: "))
+  sp = int(input("Digite la calificación de su segundo parcial: "))
+  while sp < 0 or sp > 100:
+    sp = int(input("La calificación debe ser un número entre 0 y 100. Por favor, digite la calificación del segundo parcial nuevamente: "))
+  ef = int(input("Digite la calificación de su examen final: "))
+  while ef < 0 or ef > 100:
+    ef = int(input("La calificación debe ser un número entre 0 y 100. Por favor, digite la calificación del examen final nuevamente: "))
+  tp = int(input("Digite la calificación de su total práctica: "))
+  while tp < 0 or tp > 100:
+    tp = int(input("La calificación debe ser un número entre 0 y 100. Por favor, digite la calificación del total práctica nuevamente: "))
 
 # Calcula calificación final
 def calcularCalificacion():
