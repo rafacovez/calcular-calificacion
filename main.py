@@ -32,41 +32,34 @@ def calcularCalificacion():
   global propar
   global cf
   propar = (pp + sp) / 2
-  cf = round(((propar) + ef + tp) / 3)
+  cf = ((propar) + ef + tp) / 3
 
 # Calcula literal obtenido
 def calcularLiteral():
-  global cf
   global literal
-  if cf > 90:
-    literal = "A"
-  elif cf > 80:
-    literal = "B"
-  elif cf > 70:
-    literal = "C"
-  elif cf > 60:
-    literal = "D"
-  else:
+  if cf < 59.5 or ef < 54.5 or tp < 69.5:
     literal = "F"
+  elif cf < 69.5:
+    literal = "D"
+  elif cf < 79.5:
+    literal = "C"
+  elif cf < 89.5:
+    literal = "B"
+  else:
+    literal = "A"
+
 
 # Calcula estatus obtenido
 def calcularEstatus():
-  global cf
   global estatus
-  if cf > 90:
-    estatus = "APROBADO"
-  elif cf > 80:
-    estatus = "APROBADO"
-  elif cf > 70:
-    estatus = "APROBADO"
-  elif cf > 60:
+  if cf < 69.5 or tp < 69.5 or ef < 54.5:
     estatus = "REPROBADO"
   else:
-    estatus = "REPROBADO"
+    estatus = "APROBADO"
 
 # Muestra resultado en la consola
 def mostrarResultado():
-  print("El estudiante " + estatus + " la materia en " + literal + " porque su calificación fue de", cf)
+  print("El estudiante ha " + estatus + " la materia en " + literal + " con una calificación de", round(cf))
 
 # Ejecuta todas las funciones anteriores
 def main():
