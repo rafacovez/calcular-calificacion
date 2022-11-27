@@ -1,6 +1,7 @@
 # Declara variables
 pp = 0
 sp = 0
+propar = 0
 ef = 0
 tp = 0
 cf = 0
@@ -28,13 +29,10 @@ def obtenerValores():
 
 # Calcula calificación final
 def calcularCalificacion():
+  global propar
   global cf
-<<<<<<< HEAD
   propar = (pp + sp) / 2
   cf = ((propar) + ef + tp) / 3
-=======
-  cf = round((((pp + sp) / 2) + ef + tp) / 3)
->>>>>>> parent of f69d797 (added propar variable)
 
 # Calcula literal obtenido
 def calcularLiteral():
@@ -61,7 +59,7 @@ def calcularEstatus():
 
 # Muestra resultado en la consola
 def mostrarResultado():
-  print("El estudiante ha " + estatus + " la materia en " + literal + " con una calificación de", round(cf))
+  print("El estudiante ha" + estatus + " la materia en " + literal + " con una calificación de", round(cf))
 
 # Ejecuta todas las funciones anteriores
 def main():
