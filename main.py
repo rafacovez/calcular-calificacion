@@ -1,33 +1,66 @@
-def calcular():
-  literal = ""
-  estatus = ""
+pp = 0
+sp = 0
+ef = 0
+tp = 0
+cf = 0
+literal = ""
+estatus = ""
+
+def obtenerValores():
+  global pp
+  global sp
+  global ef
+  global tp
   pp = int(input("Digite la calificación de su primer parcial" + ": "))
   sp = int(input("Digite la calificación de su segundo parcial" + ": "))
   ef = int(input("Digite la calificación de su examen final" + ": "))
   tp = int(input("Digite la calificación de su total práctica" + ": "))
+
+def calcularCalificacion():
+  global cf
   cf = round((((pp + sp) / 2) + ef + tp) / 3)
+
+def calcularLiteral():
+  global cf
+  global literal
   if cf > 90:
     literal = "A"
-    estatus = "APROBADO"
   elif cf > 80:
     literal = "B"
-    estatus = "APROBADO"
   elif cf > 70:
     literal = "C"
-    estatus = "APROBADO"
   elif cf > 60:
     literal = "D"
-    estatus = "REPROBADO"
   else:
     literal = "F"
+
+def calcularEstatus():
+  global cf
+  global estatus
+  if cf > 90:
+    estatus = "APROBADO"
+  elif cf > 80:
+    estatus = "APROBADO"
+  elif cf > 70:
+    estatus = "APROBADO"
+  elif cf > 60:
     estatus = "REPROBADO"
+  else:
+    estatus = "REPROBADO"
+
+def mostrarResultado():
   print("El estudiante " + estatus + " la materia en " + literal + " porque su calificación fue de", cf)
+
 
 def main():
   print('------------------------------')
   print('--Calculador de calificación--')
   print('------------final-------------')
   print('------------------------------')
-  calcular()
+  obtenerValores()
+  calcularCalificacion()
+  calcularLiteral()
+  calcularEstatus()
+  mostrarResultado()
 
 main()
