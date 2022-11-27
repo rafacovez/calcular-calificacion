@@ -1,7 +1,6 @@
 # Declara variables
 pp = 0
 sp = 0
-propar = 0
 ef = 0
 tp = 0
 cf = 0
@@ -29,10 +28,13 @@ def obtenerValores():
 
 # Calcula calificación final
 def calcularCalificacion():
-  global propar
   global cf
+<<<<<<< HEAD
   propar = (pp + sp) / 2
   cf = ((propar) + ef + tp) / 3
+=======
+  cf = round((((pp + sp) / 2) + ef + tp) / 3)
+>>>>>>> parent of f69d797 (added propar variable)
 
 # Calcula literal obtenido
 def calcularLiteral():
