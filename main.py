@@ -1,3 +1,4 @@
+# Declara variables
 pp = 0
 sp = 0
 ef = 0
@@ -6,6 +7,7 @@ cf = 0
 literal = ""
 estatus = ""
 
+# Obtiene valores para realizar cálculo de calificación final
 def obtenerValores():
   global pp
   global sp
@@ -16,10 +18,12 @@ def obtenerValores():
   ef = int(input("Digite la calificación de su examen final" + ": "))
   tp = int(input("Digite la calificación de su total práctica" + ": "))
 
+# Calcula calificación final
 def calcularCalificacion():
   global cf
   cf = round((((pp + sp) / 2) + ef + tp) / 3)
 
+# Calcula literal obtenido
 def calcularLiteral():
   global cf
   global literal
@@ -34,6 +38,7 @@ def calcularLiteral():
   else:
     literal = "F"
 
+# Calcula estatus obtenido
 def calcularEstatus():
   global cf
   global estatus
@@ -48,10 +53,11 @@ def calcularEstatus():
   else:
     estatus = "REPROBADO"
 
+# Muestra resultado en la consola
 def mostrarResultado():
   print("El estudiante " + estatus + " la materia en " + literal + " porque su calificación fue de", cf)
 
-
+# Ejecuta todas las funciones anteriores
 def main():
   print('------------------------------')
   print('--Calculador de calificación--')
