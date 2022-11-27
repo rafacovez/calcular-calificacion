@@ -56,7 +56,7 @@ def calcularEstatus():
 
 # Muestra resultado en la consola
 def mostrarResultado():
-  print("El estudiante ha" + estatus + " la materia en " + literal + " con una calificación de", round(cf))
+  print("El estudiante ha " + estatus + " la materia en " + literal + " con una calificación de", round(cf))
 
 # Ejecuta todas las funciones anteriores
 def main():
